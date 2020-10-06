@@ -1,0 +1,11 @@
+.card
+  .card-header
+    = post.title
+  .card-body
+    = post.content
+  .card-footer
+    = post.created_at
+    = link_to 'Показать', post
+    = link_to 'Редактировать', edit_post_path(post)
+    = link_to 'Удалить', post, method: :delete, data: { confirm: 'Вы уверены?' }
+%p  
