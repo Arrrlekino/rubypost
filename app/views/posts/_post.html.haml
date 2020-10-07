@@ -1,11 +1,19 @@
 .card
   .card-header
-    = post.title
+    = link_to post.title, post
+    /= post.title
   .card-body
     = post.content
   .card-footer
     = post.created_at
-    = link_to 'Показать', post
-    = link_to 'Редактировать', edit_post_path(post)
-    = link_to 'Удалить', post, method: :delete, data: { confirm: 'Вы уверены?' }
+    /= link_to 'Показать', post
+    /= link_to 'Редактировать', edit_post_path(post)
+    %p
+    = link_to edit_post_path(post), class: 'btn btn-sm btn-warning' do
+      .fa.fa-edit
+      Редактировать
+    /= link_to 'Удалить', post, method: :delete, data: { confirm: 'Вы уверены?' }
+    = link_to post, method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-sm btn-danger' do
+      .fa.fa-trash
+      Удалить
 %p  
