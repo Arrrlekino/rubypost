@@ -12,7 +12,7 @@
       = render 'layouts/messages'
 
       - if current_user
-        = current_user.email
+        = current_user.nickname
         = link_to edit_user_registration_path do
           .fa.fa-cog
           %b Настройки

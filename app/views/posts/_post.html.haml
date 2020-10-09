@@ -1,5 +1,7 @@
 .card
   .card-header
+    = post.user.nickname
+    %p
     = link_to post.title, post
     /= post.title
   .card-body
