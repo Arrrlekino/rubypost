@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   #validates :nickname, presence: true, uniqueness: true
   has_many :posts
+  acts_as_voter
 end

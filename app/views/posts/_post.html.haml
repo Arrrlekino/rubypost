@@ -1,5 +1,6 @@
 .card
   .card-header
+    %i
     = post.user.nickname
     %p
     = link_to post.title, post
@@ -20,4 +21,15 @@
         = link_to post, method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-sm btn-danger' do
           .fa.fa-trash
           Удалить
+  .card-footer
+    - if action_name == 'show'
+    
+      = content_tag "div", id: "like-count" do
+        = render 'posts/likes', post: post
+      = content_tag "div", id: "like-link" do
+        = render 'posts/like_link', post: post
+    - else
+      %b
+      Рейтинг:
+      = post.get_upvotes.size
 %p  
