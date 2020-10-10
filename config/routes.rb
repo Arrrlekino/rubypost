@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       registrations: 'users/registrations'
     }
   resources :posts
-  root 'static_pages#index'
+  root 'posts#index'
   get 'static_pages/index'
   get 'privacy_policy', to: 'static_pages#privacy_policy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
